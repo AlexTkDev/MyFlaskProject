@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Главная страница
+{% endblock %}
+
+{% block body %}
+    <main class="container">
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h3 class="card-title pricing-card-title">Статьи в блоге:</h3>
+            <p class="fs-5 text-body-secondary">В этом разделе вы можете прочесть опубликованные статьи.</p>
+        </div>
+        {% if articles|length > 0 %}
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+            {% for el in articles %}
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 text-bg-primary border-primary">
+                            <h4 class="my-0 fw-normal">{{ el.title }}</h4>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>{{ el.intro }}</li>
+                                <li>Автор: {{ el.author }}</li>
+                                <li>Дата: {{ el.date_posted.date() }}</li>
+                            </ul>
+                            <a href="/posts/{{ el.id }}" class="w-100 btn btn-lg btn-primary">Вся статья ...</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Нет добавленных статей.</p>
+        {% endif %}
+        </div>
+    </main>
+{% endblock %}
