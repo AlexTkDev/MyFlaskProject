@@ -1,0 +1,262 @@
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Cython build files
+*.c
+*.cpp
+*.cxx
+*.h
+*.hh
+*.hxx
+*.so
+*.pyd
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Python packaging
+*.egg
+*.egg-info
+*.pyc
+*.pyo
+*.pyd
+*.whl
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Test results
+junit*.xml
+test*.log
+
+# Translations
+*.mo
+*.pot
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+*.sqlite3
+
+# PyInstaller
+*.manifest
+*.spec
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+*.ipr
+
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Spyder
+.spyderproject
+.spyproject
+
+# Rope
+.ropeproject
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre
+.pyre/
+
+# Cython debug symbols
+cython_debug/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Flask
+instance/
+.webassets-cache
+
+# Scrapy
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*.swn
+*~
+*.bak
+*.orig
+*.rej
+*.sublime-project
+*.sublime-workspace
+.sass-cache/
+.styl-cache/
+*.css.map
+*.scssc
+*.sassc
+
+# macOS files
+.DS_Store
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.stackdump
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# Environment variables
+env
+.env
+*.env
+.env.*
+venv
+.venv
+
+# Virtualenv
+env/
+.venv/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.python-version
+
+# Anaconda
+.conda
+*.conda
+*.condarc
+*.conda-env
+
+# Poetry
+.poetry
+*.lock
+
+# pyenv
+.python-version
+
+# IDEs
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Local configurations
+.local
+.localdev
+.localconfig
+
+# AWS SAM
+.aws-sam/
+
+# Azure Functions
+.local.settings.json
+.deploy/
+
+# Google Cloud Functions
+.gcloud/
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# Helm
+.helm/
+
+# Ansible
+.ansible/
+
+# Vagrant
+.vagrant/
+
+# Chef
+.chef/
+
+# Puppet
+.puppet/
+
+# PowerShell
+.ps1
+
+# Oh My Zsh
+.oh-my-zsh/
+
+# Fish
+.fish_history
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+
+# Make
+Makefile
+GNUMakefile
+makefile
+makefile.in
+Makefile.in
+.idea
