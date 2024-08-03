@@ -72,7 +72,7 @@ pip install -r requirements.txt
 Для запуска приложения выполните следующую команду:
 
 ```bash
-uvicorn app:app --reload
+hypercorn app:app --reload
 ```
 
 Приложение будет доступно по адресу [http://127.0.0.1:8000](http://127.0.0.1:8000).

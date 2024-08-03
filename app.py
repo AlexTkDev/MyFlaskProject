@@ -1,7 +1,7 @@
 from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-
+from asgiref.wsgi import WsgiToAsgi
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
@@ -48,7 +48,7 @@ def posts_delete(post_id):
         db.session.commit()
         return redirect('/posts')
     except Exception as e:
-        return f"Failed to create article: {e}"
+        return f"Failed to delete article: {e}"
 
 
 @app.route('/create', methods=['GET', 'POST'])
@@ -94,4 +94,9 @@ def about():
 
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    import hypercorn.asyncio
+    from hypercorn.config import Config
+
+    config = Config()
+    config.bind = ["127.0.0.1:8000"]
+    var = hypercorn.asyncio.run
