@@ -47,7 +47,7 @@ myblog/
 ### Cloning the Repository
 
 ```bash
-git clone <your repository URL>
+git clone https://github.com/AlexTkDev/MyFlaskProject.git
 cd myblog
 ```
 
