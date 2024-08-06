@@ -1,22 +1,118 @@
-# Документация к магазину на FastAPI
+# Blog Documentation on Flask
 
-## Описание проекта
+## Project Description
 
-Этот проект представляет собой онлайн-магазин, разработанный с использованием FastAPI. Он позволяет пользователям просматривать товары, добавлять их в корзину и оформлять заказы. Проект использует шаблоны для отображения страниц и Bootstrap 5 для стилизации.
+This project is a blog developed using Flask. It allows users to view posts, add new entries, and leave comments.
 
-## Структура проекта
+## Project Structure
 
 ```
-myshop/
+myblog/
 ├── instance/
 │   ├── __init__.py
 │   └── config.py
 ├── templates/
 │   ├── base.html
 │   ├── index.html
-│   ├── product.html
-│   ├── cart.html
-│   └── checkout.html
+│   ├── post.html
+│   └── new_post.html
+├── app.py
+├── requirements.txt
+└── README.md
+```
+
+### Directory and File Descriptions
+
+- `instance/`: Configuration files.
+  - `__init__.py`: Package initialization.
+  - `config.py`: Application configuration.
+  
+- `templates/`: HTML templates.
+  - `base.html`: Common page structure.
+  - `index.html`: Home page.
+  - `post.html`: Post page.
+  - `new_post.html`: New post page.
+  
+- `app.py`: Main application file.
+  
+- `requirements.txt`: Project dependencies.
+
+## Installation and Running the Project
+
+### Prerequisites
+
+- Python 3.8+
+- pip
+
+### Cloning the Repository
+
+```bash
+git clone <your repository URL>
+cd myblog
+```
+
+### Installing Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Running the Application
+
+```bash
+flask run
+```
+
+The application will be available at [http://127.0.0.1:5000](http://127.0.0.1:5000).
+
+## Using Bootstrap 5
+
+Bootstrap 5 is used for styling the pages, included through `base.html`.
+
+## Application Routes
+
+### Home Page
+
+Route: `/`
+
+Description: Displays all posts.
+
+### Post Page
+
+Route: `/post/<post_id>`
+
+Description: Displays the selected post.
+
+### New Post
+
+Route: `/new`
+
+Description: Form for adding a new post.
+
+## Conclusion
+
+This project is a simple blog on Flask that can be extended and modified to suit your needs. Flask provides flexibility and ease of development, and using templates and Bootstrap 5 allows for creating modern and responsive interfaces.
+
+***
+
+# Документация к блогу на Flask
+
+## Описание проекта
+
+Этот проект представляет собой блог, разработанный с использованием Flask. Он позволяет пользователям просматривать посты, добавлять новые записи и оставлять комментарии.
+
+## Структура проекта
+
+```
+myblog/
+├── instance/
+│   ├── __init__.py
+│   └── config.py
+├── templates/
+│   ├── base.html
+│   ├── index.html
+│   ├── post.html
+│   └── new_post.html
 ├── app.py
 ├── requirements.txt
 └── README.md
@@ -24,44 +120,35 @@ myshop/
 
 ### Описание директорий и файлов
 
-- `instance/`: Директория, содержащая конфигурационные файлы.
-  - `__init__.py`: Инициализационный файл для пакета.
-  - `config.py`: Файл конфигурации приложения.
+- `instance/`: Конфигурационные файлы.
+  - `__init__.py`: Инициализация пакета.
+  - `config.py`: Конфигурация приложения.
   
-- `templates/`: Директория, содержащая HTML-шаблоны для отображения страниц.
-  - `base.html`: Базовый шаблон, включающий общую структуру страницы.
-  - `index.html`: Шаблон главной страницы.
-  - `product.html`: Шаблон страницы товара.
-  - `cart.html`: Шаблон страницы корзины.
-  - `checkout.html`: Шаблон страницы оформления заказа.
+- `templates/`: HTML-шаблоны.
+  - `base.html`: Общая структура страниц.
+  - `index.html`: Главная страница.
+  - `post.html`: Страница поста.
+  - `new_post.html`: Страница добавления нового поста.
   
-- `app.py`: Основной файл приложения, содержащий код для запуска сервера и определения маршрутов.
+- `app.py`: Основной файл приложения.
   
-- `requirements.txt`: Файл, содержащий список зависимостей проекта.
-
-- `README.md`: Файл с описанием проекта и инструкциями по его запуску.
+- `requirements.txt`: Зависимости проекта.
 
 ## Установка и запуск проекта
 
 ### Предварительные требования
-
-Убедитесь, что у вас установлены следующие компоненты:
 
 - Python 3.8+
 - pip
 
 ### Клонирование репозитория
 
-Клонируйте репозиторий с помощью следующей команды:
-
 ```bash
-git clone <URL вашего репозитория>
-cd myshop
+git clone https://github.com/AlexTkDev/MyFlaskProject.git
+cd myblog
 ```
 
 ### Установка зависимостей
-
-Установите зависимости, указанные в файле `requirements.txt`:
 
 ```bash
 pip install -r requirements.txt
@@ -69,58 +156,15 @@ pip install -r requirements.txt
 
 ### Запуск приложения
 
-Для запуска приложения выполните следующую команду:
-
 ```bash
-hypercorn app:app --reload
+flask run
 ```
 
-Приложение будет доступно по адресу [http://127.0.0.1:8000](http://127.0.0.1:8000).
+Приложение будет доступно по адресу [http://127.0.0.1:5000](http://127.0.0.1:5000).
 
 ## Использование Bootstrap 5
 
-В проекте используется Bootstrap 5 для стилизации страниц. Все стили подключены через базовый шаблон `base.html`:
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">MyShop</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/cart">Cart</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/checkout">Checkout</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="container">
-        {% block content %}{% endblock %}
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
-```
-
-Все остальные шаблоны наследуют этот базовый шаблон и заполняют блок `content` соответствующим содержимым.
+Для стилизации страниц используется Bootstrap 5, подключенный через `base.html`.
 
 ## Маршруты приложения
 
@@ -128,26 +172,20 @@ hypercorn app:app --reload
 
 Маршрут: `/`
 
-Описание: Отображает главную страницу магазина с перечнем товаров.
+Описание: Отображает все посты.
 
-### Страница товара
+### Страница поста
 
-Маршрут: `/product/{product_id}`
+Маршрут: `/post/<post_id>`
 
-Описание: Отображает информацию о выбранном товаре.
+Описание: Отображает выбранный пост.
 
-### Корзина
+### Новая запись
 
-Маршрут: `/cart`
+Маршрут: `/new`
 
-Описание: Отображает корзину пользователя с добавленными товарами.
-
-### Оформление заказа
-
-Маршрут: `/checkout`
-
-Описание: Отображает страницу для оформления заказа.
+Описание: Форма для добавления нового поста.
 
 ## Заключение
 
-Этот проект представляет собой простой онлайн-магазин, который можно расширять и модифицировать в соответствии с вашими потребностями. FastAPI обеспечивает высокую производительность и удобство разработки, а использование шаблонов и Bootstrap 5 позволяет легко создавать современные и отзывчивые интерфейсы.
+Этот проект представляет собой простой блог на Flask, который можно расширять и модифицировать под ваши нужды. Flask обеспечивает гибкость и легкость разработки, а использование шаблонов и Bootstrap 5 позволяет создавать современные и отзывчивые интерфейсы.
